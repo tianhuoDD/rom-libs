@@ -6,6 +6,7 @@ import { initAxios, addResponseInterceptor, addRequestInterceptor } from "./src/
  */
 export default {
 	initAxios, // 用户可以覆盖 axios 配置
+
 	addResponseInterceptor, // 添加响应拦截器
 	addRequestInterceptor, // 添加请求拦截器
 
