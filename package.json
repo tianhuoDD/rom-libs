@@ -3,12 +3,17 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
+	"type": "module",
 	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"author": "Rom",
+	"license": "MIT",
+	"scripts": {
+		"lint:eslint": "eslint . --fix",
+		"lint:prettier": "prettier --write .",
+		"prepare": "husky",
+		"lint:lint-staged": "lint-staged",
+		"commit": "git-cz"
+	},
 	"config": {
 		"commitizen": {
 			"path": "node_modules/cz-git"
