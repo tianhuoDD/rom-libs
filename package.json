@@ -3,10 +3,10 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-	"type": "module",
 	"keywords": [],
 	"author": "Rom",
 	"license": "MIT",
+	"type": "module",
 	"scripts": {
 		"lint:eslint": "eslint . --fix",
 		"lint:prettier": "prettier --write .",
