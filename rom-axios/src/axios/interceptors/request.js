@@ -8,7 +8,7 @@ export const requestInterception = (config) => {
 	const token = localStorage.getItem("token") || "";
 	if (token) {
 		// 将 Authorization 字段设为token
-		config.headers.Authorization = token;
+		config.headers.Authorization = "Bearer " + token;
 	}
 	return config;
 };
