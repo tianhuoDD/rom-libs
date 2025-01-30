@@ -66,5 +66,23 @@ const requestForm = (method, url, data = {}, options = {}) => {
 
 	return method(url, formData, config);
 };
+/**
+ * 处理文件上传请求
+ * @param {Function} method - HTTP 方法函数（post, put）
+ * @param {string} url - 请求的 URL
+ * @param {FormData} data - 请求数据（必须是 FormData）
+ * @param {Object} options - 额外的 Axios 配置选项
+ * @returns {Promise} - Axios 响应 Promise
+ */
+const requestFile = (method, url, data, options = {}) => {
+	// 固定的请求头
+	const config = {
+		headers: {
+			"Content-Type": "multipart/form-data",
+		},
+		...options, // 合并额外的配置
+	};
 
-export { requestJson, requestForm };
+	return method(url, data, config);
+};
+export { requestJson, requestForm, requestFile };

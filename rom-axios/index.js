@@ -1,4 +1,4 @@
-import { get, post, put, del, requestJson, requestForm } from "./src/apis/index";
+import { get, post, put, del, requestJson, requestForm, requestFile } from "./src/apis/index";
 import { initAxios, addResponseInterceptor, addRequestInterceptor } from "./src/axios/index";
 /**
  * import romAxios from "@rom/axios";
@@ -17,4 +17,5 @@ export default {
 
 	requestJson,
 	requestForm,
+	requestFile,
 };
