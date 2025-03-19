@@ -1,13 +1,14 @@
-/**
- * 配置axios请求拦截器
- * @desc 默认设置：从 `localstorage` 中获取字段 `token` ,向请求头的 `Authorization` 字段添加该 `token`
- */
+import { addPendingRequest, removePendingRequest } from "../utils/pendingRequest";
 
+/**
+ * 请求拦截器：添加 token，处理重复请求
+ */
 export const requestInterception = (config) => {
-	// 设置token
+	removePendingRequest(config); // 先移除已有请求，避免短时间内重复请求
+	addPendingRequest(config); // 添加新请求
+
 	const token = localStorage.getItem("token") || "";
 	if (token) {
-		// 将 Authorization 字段设为token
 		config.headers.Authorization = "Bearer " + token;
 	}
 	return config;
