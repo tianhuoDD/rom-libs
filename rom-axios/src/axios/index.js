@@ -1,8 +1,9 @@
-/* https://jackchoumine.github.io/web/js/%E5%B0%81%E8%A3%85axios.html 
+/* https://jackchoumine.github.io/web/js/%E5%B0%81%E8%A3%85axios.html
 restful api
 */
 import axios from "axios";
-import { merge } from "lodash";
+// 按需引入方式
+import merge from "lodash/merge";
 import { requestInterception } from "./interceptors/request";
 import { responseSuccessInterception, responseFailedInterception } from "./interceptors/response";
 // 初始化实例
